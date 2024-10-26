@@ -4,6 +4,7 @@ source = []
 probalblities = []
 inp = 0;
 calcInput = 0;
+
 while(inp != "#"):
     inp = input("Entrez Les nombres de la source et pour arreter tapez #: ")
     if(inp == '#'):
@@ -19,7 +20,8 @@ while(inp != "#"):
             print("Entrée invalide. Veuillez entrer un nombre.")
     source.append(inp)
     probalblities.append(float(prob))
-    print("La somme des probabilites est: ", sum(probalblities))
+    if(sum(probalblities) == 1):
+        break
 
 
         
@@ -36,7 +38,6 @@ while True:
         for i in range(len(probalblities)):
             quantite += probalblities[i] * math.log2(1/probalblities[i])
         print("L'entropie est: ", quantite)
-        break
     else:
         if(calcInput == '1'):
             while True:
