@@ -12,10 +12,10 @@ while(inp != "#"):
     while True:
        try:
             prob = float(input("Entrez la probabilite de cet element (entre 0 et 1): "))
-            if 0 <= prob <= 1:
+            if (0 <= prob <= 1 and prob + sum(probalblities) <= 1):
                 break
             else:
-                print("La probabilite doit être entre 0 et 1. Veuillez réessayer.")
+                print("La probabilite doit être entre 0 et 1. Veuillez réessayer et les probabilites doivent être == 1.")
        except ValueError:
             print("Entrée invalide. Veuillez entrer un nombre.")
     source.append(inp)
