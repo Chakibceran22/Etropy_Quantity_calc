@@ -3,7 +3,7 @@ import math
 s1 = []
 s2 = []
 p1 = []
-p2 = []
+p21 = []
 
 sinput = 0
 
@@ -15,7 +15,6 @@ def get_input(s, p,i):
         while True:
                 try:
                     prob = float(input("Entrez la probabilite de cet element (entre 0 et 1): "))
-                    print(sum(p) + prob)
                     if (prob + sum(p) <= 1 and 0 <= prob <= 1):
                         break
                     else:
@@ -29,9 +28,24 @@ def get_input(s, p,i):
     return False
 
 get_input(s1, p1, 1)
-get_input(s2, p2, 2)
+get_input(s2, p21, 2)
 
 print("La source 1 est: ", s1)
 print("Les probabilites sont: ", p1)
 print("La source 2 est: ", s2)
-print("Les probabilites sont: ", p2)
+print("Les probabilites sont: ", p21)
+
+while True:
+    calcInput = input("Entrez 1 pour calculer l'entropie conjointe ou bien arreter avec #: ")
+    if(calcInput == '#'):
+        break
+    if(calcInput == '1'):
+        quantite = 0
+        for i in range(len(p1)):
+            quantite += p1[i] 
+            for j in range(len(p21)):
+                quantite += p21[j] * math.log2(1/(p1[i] * p21[j]))
+        print("L'entropie conjointe est: ", quantite)
+
+
+

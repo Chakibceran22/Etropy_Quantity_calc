@@ -6,9 +6,7 @@ inp = 0;
 calcInput = 0;
 
 while(inp != "#"):
-    inp = input("Entrez Les nombres de la source et pour arreter tapez #: ")
-    if(inp == '#'):
-      break
+    inp = input("Entrez Les nombres de la source et pour arreter les probas doitent = 1: ")
     while True:
        try:
             prob = float(input("Entrez la probabilite de cet element (entre 0 et 1): "))
